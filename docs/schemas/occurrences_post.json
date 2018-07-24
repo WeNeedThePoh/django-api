@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Creates new occurrence",
+  "description": "Payload to create a new occurrence",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Occurrence description"
+    },
+    "author": {
+      "type": "string",
+      "description": "Occurrence author"
+    },
+    "location": {
+      "description": "Occurrence geographic location",
+      "type": "object",
+      "properties": {
+        "latitute": {
+          "type": "float",
+          "description": "Occurrence location latitute"
+        },
+        "longitude": {
+          "type": "float",
+          "description": "Occurrence location longitude"
+        },
+      }
+    },
+    "date": {
+      "type": "string",
+      "description": "Date when occurrence was created"
+    },
+    "status": {
+      "type": "string",
+      "description": "Occurrence status",
+      "default": "por validar"
+    },
+    "category": {
+      "type": "string",
+      "description": "Occurrence category"
+    },
+  },
+  "required": [
+    "description",
+    "author",
+    "date",
+    "status",
+    "category"
+  ]
+}

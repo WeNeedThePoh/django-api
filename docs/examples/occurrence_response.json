@@ -1,0 +1,30 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "author": "Pedro",
+            "description": "acidente grave com duas viaturas",
+            "status": "por validar",
+            "location": {
+              "latitute": 40.6405,
+              "longitude": 8.6538
+            },
+            "date": "24-07-2018 22:22:00",
+            "updateDate": "24-07-2018 22:22:00",
+            "category": "INCIDENT"
+        },
+        {
+            "id": 2,
+            "author": "João",
+            "description": "estrada com buracos",
+            "status": "validado",
+            "location": {
+              "latitute": 40.6405,
+              "longitude": 8.6538
+            },
+            "date": "24-07-2018 22:22:00",
+            "updateDate": "26-07-2018 10:32:00",
+            "category": "ROAD_CONDITION"
+        },
+    ]
+}
