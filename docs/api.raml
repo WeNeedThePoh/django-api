@@ -1,0 +1,77 @@
+#%RAML 1.0
+title: Django small api
+baseUri: http://localhost
+version: 1.0
+documentation:
+  - title: Welcome
+    content: |
+      This is the documentation for the API test.
+      Here are some resources that will help you understand the basics of the API.
+mediaType: application/json
+/occurrence:
+  displayName: Occurrence
+  description: Endpoint to manage occurrences.
+  /:
+    queryParameters:
+      filterType:
+        description: The type filter to apply
+        required: false
+        type: string
+        example: "author"
+      filter:
+        description: The filter to apply
+        required: false
+        type: string
+        example: "Pedro"
+    get:
+      description: Get all the occurrences.
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/occurrence_response.json
+          description:  All the occurrences were listed successfully
+    post:
+      description: Create a new occurrence.
+      body:
+        application/json:
+          schema: !include schemas/occurrences_post.json
+          example: !include examples/occurrences_post.json
+      responses:
+        200:
+          description: The occurrence was created successfully
+        400:
+          description: Invalid request payload
+  /{id}:
+    uriParameters:
+      id:
+        description: ID of occurrence
+        required: true
+        type: integer
+        example: 20
+    get:
+      description: Get a specific occurrence by ID
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/occurrence_id_response.json
+          description: A specific occurrence was listed successfully
+    patch:
+      description: Update a specific occurrence
+      body:
+        application/json:
+          schema: !include schemas/occurrence_patch.json
+          example: !include examples/occurrence_patch.json
+      responses:
+        200:
+          description: The occurrence was updated successfully
+        400:
+          description: Invalid request payload
+    delete:
+      description: Delete a specific occurrence
+      responses:
+        200:
+          description: The occurrence was deleted successfully
+        400:
+          description: The occurrence does not exist
