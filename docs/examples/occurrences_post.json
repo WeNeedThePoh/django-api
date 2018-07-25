@@ -4,8 +4,8 @@
     "status": "por validar",
     "location": {
       "latitute": 40.6405,
-      "longitude": 8.6538
+      "longitude": 8.6538,
+      "place": "Aveiro, rua 25 de Abril"
     },
-    "date": "24-07-2018 22:22:00",
     "category": "INCIDENT"
 }

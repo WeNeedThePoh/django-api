@@ -24,11 +24,16 @@
           "type": "float",
           "description": "Occurrence location longitude"
         },
-      }
-    },
-    "date": {
-      "type": "string",
-      "description": "Date when occurrence was created"
+        "place": {
+          "type": "string",
+          "description": "Occurrence place"
+        }
+      },
+      "required": [
+        "latitute",
+        "longitude",
+        "place"
+      ]
     },
     "status": {
       "type": "string",
@@ -38,12 +43,12 @@
     "category": {
       "type": "string",
       "description": "Occurrence category"
-    },
+    }
   },
   "required": [
     "description",
     "author",
-    "date",
+    "location",
     "status",
     "category"
   ]

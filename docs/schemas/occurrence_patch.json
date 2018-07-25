@@ -4,12 +4,52 @@
   "description": "Payload to update a occurrence",
   "type": "object",
   "properties": {
+    "description": {
+      "type": "string",
+      "description": "Occurrence description"
+    },
+    "author": {
+      "type": "string",
+      "description": "Occurrence author"
+    },
+    "location": {
+      "description": "Occurrence geographic location",
+      "type": "object",
+      "properties": {
+        "latitute": {
+          "type": "float",
+          "description": "Occurrence location latitute"
+        },
+        "longitude": {
+          "type": "float",
+          "description": "Occurrence location longitude"
+        },
+        "place": {
+          "type": "string",
+          "description": "Occurrence place"
+        }
+      },
+      "required": [
+        "latitute",
+        "longitude",
+        "place"
+      ]
+    },
     "status": {
       "type": "string",
-      "description": "Occurrence status"
+      "description": "Occurrence status",
+      "default": "por validar"
     },
+    "category": {
+      "type": "string",
+      "description": "Occurrence category"
+    }
   },
   "required": [
-    "status"
+    "description",
+    "author",
+    "location",
+    "status",
+    "category"
   ]
 }

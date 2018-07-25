@@ -12,18 +12,18 @@ mediaType: application/json
   displayName: Occurrence
   description: Endpoint to manage occurrences.
   /:
-    queryParameters:
-      filterType:
-        description: The type filter to apply
-        required: false
-        type: string
-        example: "author"
-      filter:
-        description: The filter to apply
-        required: false
-        type: string
-        example: "Pedro"
     get:
+      queryParameters:
+        filterType:
+          description: The type filter to apply
+          required: false
+          type: string
+          example: "author"
+        filter:
+          description: The filter to apply
+          required: false
+          type: string
+          example: "Pedro"
       description: Get all the occurrences.
       responses:
         200:
