@@ -13,9 +13,14 @@ help:
 	@echo "---------------------------------------------"
 	@echo "List of available targets:"
 	@echo "  api_docs                 - Generate API endpoints documentation"
+	@echo "  hijack                   - Get inside the container"
 	@exit 0
 
 api_docs:
 	@echo "$(OK_COLOR)==> Generating API endpoints documentation$(NO_COLOR)"
 	${RAML2HTML} -o ${WEB_DOCS}/index.html
 @echo "$(OK_COLOR)==> Finished!$(NO_COLOR) Docs are available at ${WEB_DOCS}/index.html"
+
+hijack:
+	@echo "$(OK_COLOR)==> Hijacking container$(NO_COLOR)"
+	docker run -it djangoapi_api bash
