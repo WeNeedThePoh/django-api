@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
+from django.contrib.gis.db import models
 
-from django.db import models
 
 class Occurence(models.Model):
     CATEGORIES = (
@@ -21,8 +21,9 @@ class Occurence(models.Model):
     description = models.CharField(max_length=255, null=False)
     createdData = models.DateTimeField(auto_now_add=True)
     updatedDate = models.DateTimeField(auto_now=True)
+    position = models.PointField(null=True, blank=True)
     category = models.CharField(max_length=255, choices=CATEGORIES, null=False)
     status = models.CharField(max_length=255, choices=STATUS, null=False, default='To be validated')
 
     def __str__(self):
-        return "{} - {} - {} - {} - {} - {}".format(self.author, self.description, self.createdData, self.updatedDate, self.category, self.status)
+        return "{} - {} - {} - {} - {} - {}".format(self.author, self.description, self.createdData, self.updatedDate, self.position, self.category, self.status)
