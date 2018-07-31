@@ -12,7 +12,7 @@ class Occurence(models.Model):
     )
 
     STATUS = (
-        ('To be validated', 'To be validated'),
+        ('To_be_validated', 'To be validated'),
         ('Validated', 'Validated'),
         ('Solved', 'Solved'),
     )

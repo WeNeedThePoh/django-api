@@ -1,6 +1,9 @@
 from rest_framework import viewsets
 from api.serializers import OccurenceSerializer
 from api.models import Occurence
+from django.contrib.gis.measure import Distance
+from django.contrib.gis.geos import GEOSGeometry
+from decimal import Decimal
 
 class OccurenceViewSet(viewsets.ModelViewSet):
     """
@@ -11,18 +14,45 @@ class OccurenceViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         """
-        Optionally restricts the returned purchases to a given user,
-        by filtering against a `username` query parameter in the URL.
+        Filtering occurences by status, author, category or distance
         """
         queryset = Occurence.objects.all()
-        type = self.request.query_params.get('type', None)
-        filter = self.request.query_params.get('filter', None)
+        author = self.request.query_params.get('author', '')
+        category = self.request.query_params.get('category', '')
+        status = self.request.query_params.get('status', '')
+        lng = self.request.query_params.get('lng', None)
+        lat = self.request.query_params.get('lat', None)
+        distance = self.request.query_params.get('distance', None)
 
-        if type is not None:
-            if type == 'author':
-                queryset = queryset.filter(author__iexact=filter)
-            elif type == 'category':
-                queryset = queryset.filter(category__iexact=filter)
-            else:
-                queryset = queryset.filter(status__iexact=filter)
+        locationFilter = createPointFromLocation(lng, lat, distance)
+
+        if locationFilter is not None:
+            queryset = queryset.filter(
+                author__icontains=author,
+                category__icontains=category,
+                status__icontains=status,
+                position__distance_lte=(
+                    locationFilter[0],
+                    locationFilter[1]
+                )
+            )
+
+        queryset = queryset.filter(
+            author__icontains=author,
+            category__icontains=category,
+            status__icontains=status
+        )
+
         return queryset
+
+def createPointFromLocation(lng, lat, distance):
+    if all([lng, lat, distance]):
+        longitude = Decimal(lng)
+        latitude = Decimal(lat)
+
+        point = GEOSGeometry("POINT({} {})".format(longitude, latitude))
+        radius = Distance(km=distance)
+
+        return [point, radius]
+    else:
+        return None
