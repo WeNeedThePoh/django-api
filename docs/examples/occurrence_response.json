@@ -1,31 +1,22 @@
-{
-    "data": [
-        {
-            "id": 1,
-            "author": "Pedro",
-            "description": "acidente grave com duas viaturas",
-            "status": "por validar",
-            "location": {
-              "latitute": 40.6405,
-              "longitude": 8.6538,
-              "place": "Aveiro, rua 25 de Abril"
-            },
-            "date": "24-07-2018 22:22:00",
-            "updateDate": "24-07-2018 22:22:00",
-            "category": "INCIDENT"
-        },
-        {
-            "id": 2,
-            "author": "João",
-            "description": "estrada com buracos",
-            "status": "validado",
-            "location": {
-              "latitute": 40.6405,
-              "longitude": 8.6538
-            },
-            "date": "24-07-2018 22:22:00",
-            "updateDate": "26-07-2018 10:32:00",
-            "category": "ROAD_CONDITION"
-        },
-    ]
-}
+[
+    {
+        "id": 1,
+        "author": "Guilherme",
+        "description": "Sao bernardo",
+        "createdData": "2018-07-31T12:30:01.716276Z",
+        "updatedDate": "2018-07-31T12:30:01.716360Z",
+        "position": "SRID=4326;POINT (-8.628074 40.618218)",
+        "category": "CONSTRUCTION",
+        "status": "To be validated"
+    },
+    {
+        "id": 2,
+        "author": "Pedro",
+        "description": "aveiro",
+        "createdData": "2018-07-31T12:30:15.976248Z",
+        "updatedDate": "2018-07-31T18:14:57.085658Z",
+        "position": "SRID=4326;POINT (-8.651540000000001 40.640905)",
+        "category": "WEATHER_CONDITION",
+        "status": "Solved"
+    }
+]

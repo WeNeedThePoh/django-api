@@ -1,11 +1,7 @@
 {
     "author": "Pedro",
-    "description": "acidente grave com duas viaturas",
-    "status": "por validar",
-    "location": {
-      "latitute": 40.6405,
-      "longitude": 8.6538,
-      "place": "Aveiro, rua 25 de Abril"
-    },
-    "category": "INCIDENT"
+    "description": "aveiro",
+    "position": "SRID=4326;POINT (-8.651540000000001 40.640905)",
+    "category": "INCIDENT",
+    "status": "Solved"
 }

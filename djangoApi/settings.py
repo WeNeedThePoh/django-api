@@ -90,7 +90,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'CRITICAL',
             'class': 'logging.FileHandler',
             'filename': 'debug.log',
         },
@@ -98,7 +98,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'CRITICAL',
             'propagate': True,
         },
     },

@@ -12,28 +12,9 @@
       "type": "string",
       "description": "Occurrence author"
     },
-    "location": {
+    "position": {
       "description": "Occurrence geographic location",
-      "type": "object",
-      "properties": {
-        "latitute": {
-          "type": "float",
-          "description": "Occurrence location latitute"
-        },
-        "longitude": {
-          "type": "float",
-          "description": "Occurrence location longitude"
-        },
-        "place": {
-          "type": "string",
-          "description": "Occurrence place"
-        }
-      },
-      "required": [
-        "latitute",
-        "longitude",
-        "place"
-      ]
+      "type": "string"
     },
     "status": {
       "type": "string",
@@ -48,7 +29,7 @@
   "required": [
     "description",
     "author",
-    "location",
+    "position",
     "status",
     "category"
   ]

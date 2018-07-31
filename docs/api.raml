@@ -14,16 +14,36 @@ mediaType: application/json
   /:
     get:
       queryParameters:
-        filterType:
-          description: The type filter to apply
-          required: false
-          type: string
-          example: "author"
-        filter:
-          description: The filter to apply
+        author:
+          description: Filter occurences by author
           required: false
           type: string
           example: "Pedro"
+        category:
+          description: Filter occurences by category
+          required: false
+          type: string
+          example: "construction"
+        status:
+          description: Filter occurences by status
+          required: false
+          type: string
+          example: "solved"
+        lng:
+          description: User longitude
+          required: false
+          type: string
+          example: "-8.65375389999997"
+        lat:
+          description: User latitude
+          required: false
+          type: string
+          example: "40.6405055"
+        distance:
+          description: Filter occurences by distance
+          required: false
+          type: string
+          example: "2"
       description: Get all the occurrences.
       responses:
         200:

@@ -1,18 +1,10 @@
 {
-    "data": [
-      {
-          "id": 1,
-          "author": "Pedro",
-          "description": "acidente grave com duas viaturas",
-          "status": "por validar",
-          "location": {
-            "latitute": 40.6405,
-            "longitude": 8.6538,
-            "place": "Aveiro, rua 25 de Abril"
-          },
-          "date": "24-07-2018 22:22:00",
-          "updateDate": "24-07-2018 22:22:00",
-          "category": "INCIDENT"
-      }
-    ]
+    "id": 1,
+    "author": "Pedro",
+    "description": "aveiro",
+    "createdData": "2018-07-31T12:30:15.976248Z",
+    "updatedDate": "2018-07-31T19:08:48.995949Z",
+    "position": "SRID=4326;POINT (-8.651540000000001 40.640905)",
+    "category": "CONSTRUCTION",
+    "status": "To_be_validated"
 }
