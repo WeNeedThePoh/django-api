@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from api import views
 
 router = routers.DefaultRouter()
-router.register(r'occurences', views.OccurenceViewSet)
+router.register(r'occurences', views.OccurenceViewSet, base_name="occurence")
 
 slashless_router = routers.DefaultRouter(trailing_slash=False)
 slashless_router.registry = router.registry[:]

@@ -17,6 +17,7 @@ help:
 	@echo "  clean_cache              - Delete cache file"
 	@echo "  setup_api                - Setup api for the first time"
 	@echo "  restart_api              - Restart api"
+	@echo "  tests                    - Run api unit tests"
 	@exit 0
 
 api_docs:
@@ -54,3 +55,8 @@ restart_api:
 	docker-compose restart
 
 setup_api: start_api restart_api migrate_db
+
+tests:
+	@echo "$(OK_COLOR)==> Running unit tests...$(NO_COLOR)"
+	docker-compose run app python manage.py test
+	@echo "$(OK_COLOR)==> Done...$(NO_COLOR)"
