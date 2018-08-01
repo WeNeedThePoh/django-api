@@ -9,15 +9,15 @@ Small API that lets you perform CRUD operations. Its main focus is the managemen
 
 ### Available endpoints
 
-| Endpoint         | Method |
-| ---------        | ------ |
-| /occurences      | POST   |
-| /occurences      | GET    |
-| /occurences/{id} | GET    |
-| /occurences/{id} | PUT    |
-| /occurences/{id} | DELETE |
+| Endpoint         | Method | Description         |
+| ---------        | ------ | -----------         |
+| /occurences      | POST   | Create a occurrence |
+| /occurences      | GET    | Get all occurrences |
+| /occurences/{id} | GET    | Get a occurrence    |
+| /occurences/{id} | PUT    | Update occurrence   |
+| /occurences/{id} | DELETE | Delete occurrence   |
 
-For more details documentation you can run the following command to generation the documentation.
+For more **detailed documentation** you can run the following command to generation the documentation.
 
 ```bash
 make api_docs
@@ -57,7 +57,13 @@ There is one other option ***(better one)*** to explore the API. You can test it
 
 The endpoints are in order, so you can make the first request to create one *Occurrence*, then you can make request to get all *Occurrences* and so on.
 
+### Tests
 
+To run tests you just need to do:
+
+```bash
+make tests
+```
 
 ### Other commands
 
