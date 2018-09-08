@@ -58,5 +58,5 @@ setup_api: start_api restart_api migrate_db
 
 tests:
 	@echo "$(OK_COLOR)==> Running unit tests...$(NO_COLOR)"
-	docker-compose run app python manage.py test
+	docker-compose run api python manage.py test
 	@echo "$(OK_COLOR)==> Done...$(NO_COLOR)"
