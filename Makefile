@@ -30,6 +30,15 @@ hijack:
 	docker run -it djangoapi_api bash
 	@echo "$(OK_COLOR)==> Done...$(NO_COLOR)"
 
+hijack_pg:
+	@echo "$(OK_COLOR)==> Hijacking postgres...$(NO_COLOR)"
+	docker exec -it django-api_postgres_1 psql -U postgres
+	@echo "$(OK_COLOR)==> Done...$(NO_COLOR)"
+
+create_db:
+	sleep 2
+	docker exec -it django-api_postgres_1 psql -U postgres -c "CREATE DATABASE django_api;" || exit 0
+
 start_api:
 	@echo "$(OK_COLOR)==> Starting api engines...$(NO_COLOR)"
 	docker-compose up -d
@@ -54,7 +63,7 @@ clean_cache: hijack
 restart_api:
 	docker-compose restart
 
-setup_api: start_api restart_api migrate_db
+setup_api: start_api restart_api create_db migrate_db
 
 tests:
 	@echo "$(OK_COLOR)==> Running unit tests...$(NO_COLOR)"

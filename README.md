@@ -33,7 +33,7 @@ You can start the API by simply run the following command.
 make setup_api
 ```
 
-Because it's the first time, this command will build all the necessary images and then will spin up the containers. After that it will run migrations and make your database up to date.
+Because it's the first time, this command will build all the necessary images and then will spin up the containers. After that it will create the database, run migrations and make your database up to date.
 
 If it's not the first time you can simply run:
 
